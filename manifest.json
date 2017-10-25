@@ -18,7 +18,7 @@
     "browser_action": {
       "default_title": "Copy commits and format to redmine format",
       "default_icon": { 
-          "32": "src/images/Copy-32.png"            // optional
+          "32": "src/images/icon.png"            // optional
       }
     },
     "manifest_version": 2
