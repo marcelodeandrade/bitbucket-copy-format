@@ -4,13 +4,12 @@
     "permissions": [
       "activeTab",
       "clipboardRead",
-      "clipboardWrite"
+      "clipboardWrite",
+      "notifications",
+      "https://bitbucket.org/*/*/commits/*",
+      "http://*/",
+      "https://*/"
     ],
-    "content_scripts": [{
-      "matches": ["https://bitbucket.org/*/*/commits/*"],
-      "js": ["src/content.script.js"],
-      "run_at": "document_end"
-    }],
     "background": {
       "scripts": ["src/background.js"],
       "persistent": false
