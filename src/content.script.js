@@ -1,27 +1,35 @@
+"use strict";
 
-const commitQuery = document.querySelector(".commit-message").textContent.split(/(?=[\d]{5,7})/);
-const commitMessage = commitQuery[0] || "Sem informações";
-const commitTask = commitQuery[1] || "";
-const commitLink = document.querySelector("a.changeset-hash");
-const commitBranch = document.querySelector(".commit-branches > a");
+chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+    
+    if(request.onClicked) {
 
-const toCopy = `
-${commitMessage}
+        const commitQuery = document.querySelector(".commit-message").textContent.split(/(?=[\d]{5,7})/);
+        const commitMessage = commitQuery[0] || "Sem informações";
+        const commitTask = commitQuery[1] || "";
+        const commitLink = document.querySelector("a.changeset-hash");
+        const commitBranch = document.querySelector(".commit-branches > a");
 
-"task: #${commitTask}":http://tickets.id5.com.br:3001/issues/${commitTask}
-"commit: ${commitLink.textContent}":${commitLink.href}
-"branch: ${commitBranch.textContent.trim()}":${commitBranch.href}
-`;
+        const toCopy = `
+        ${commitMessage}
 
-const dummyElement = document.createElement("textArea");
+        "task: #${commitTask}":http://tickets.id5.com.br:3001/issues/${commitTask}
+        "commit: ${commitLink.textContent}":${commitLink.href}
+        "branch: ${commitBranch.textContent.trim()}":${commitBranch.href}
+        `;
 
-dummyElement.setAttribute("name", "dummyElement");
-dummyElement.value = toCopy;
+        const dummyElement = document.createElement("textArea");
 
-document.body.appendChild(dummyElement);
+        dummyElement.setAttribute("name", "dummyElement");
+        dummyElement.value = toCopy;
 
-dummyElement.select();
+        document.body.appendChild(dummyElement);
 
-document.execCommand("copy");
+        dummyElement.select();
 
-document.body.removeChild(dummyElement);
+        document.execCommand("copy");
+
+        document.body.removeChild(dummyElement);
+    }
+
+});
