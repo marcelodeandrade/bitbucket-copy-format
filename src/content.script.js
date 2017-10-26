@@ -7,13 +7,12 @@
     const commitLink = document.querySelector("span.changeset-hash");
     const commitBranch = document.querySelector(".commit-branches > a");
 
-    const toCopy = `
-    ${commitMessage}
-
-    "task: #${commitTask}":http://tickets.id5.com.br:3001/issues/${commitTask}
-    "commit: ${commitLink.textContent}":https://bitbucket.org/id5-web/websad-extranet/commits/${commitLink.textContent}
-    "branch: ${commitBranch.textContent.trim()}":${commitBranch.href}
-    `;
+    const toCopy = [
+        `${commitMessage}`,
+        `"task: #${commitTask}":http://tickets.id5.com.br:3001/issues/${commitTask}`,
+        `"commit: ${commitLink.textContent}":https://bitbucket.org/id5-web/websad-extranet/commits/${commitLink.textContent}`,
+        `"branch: ${commitBranch.textContent.trim()}":${commitBranch.href}`
+    ].join('\n');
 
     const dummyElement = document.createElement("textArea");
 
