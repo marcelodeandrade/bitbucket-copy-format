@@ -2,7 +2,7 @@
     "use strict";
 
     const commitQuery = document.querySelector(".commit-message").textContent.split(/(?=[\d]{5,7})/);
-    const commitMessage = commitQuery[0] || "Sem informações";
+    const commitMessage = commitQuery[0].replace("#", "") || "";
     const commitTask = commitQuery[1] || "";
     const commitLink = document.querySelector("span.changeset-hash");
     const commitBranch = document.querySelector(".commit-branches > a");
