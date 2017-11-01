@@ -13,10 +13,12 @@
                 iconUrl: 'src/images/icon.png',
                 title: 'bitbucket-copy-format',
                 message: 'Copied'
-            }, () => {
+            }, (id) => {
                 sendResponse({
                     "response": "notificated"
                 });
+
+                setTimeout(() => { chrome.notifications.clear(id); }, 1000);
             });
 
         });
