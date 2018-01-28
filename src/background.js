@@ -22,11 +22,11 @@
                                 
                 browser.storage.local.get("autoclose", (items) => {
                     
-                    if (!browser.runtime.error) {
+                    if (!browser.runtime.lastError) {
 
                         if(items.autoclose) {
                             browser.tabs.query({ active: true }, (tabs) => {
-                                chrome.tabs.remove(tabs[0].id);
+                                browser.tabs.remove(tabs[0].id);
                             });
                         }
 
