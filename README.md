@@ -5,14 +5,18 @@ A commit formatter for redmine tasks
 
 * Copy and format commits infos
 
-## Usage
+## Installation on Chrome 
+0. Open `chrome://extensions` in chrome
+1. Click load unpacked extension 
+2. Select folder wich contains that project
 
-1. Open `chrome://extensions` in chrome
-2. Click load unpacked extension 
-3. Select folder wich contains that project
-3. Open commit page (like `https://bitbucket.org/*/*/commits/*`)
-4. Click in extension button
-5. Paste
+## Installation on Firefox 
+You can load the extension directly from the zip file on web-ext-artifacts folder
+
+## Usage
+0. Open commit page (like `https://bitbucket.org/*/*/commits/*`)
+1. Click in extension button
+2. Paste
 
 ## License
 
