@@ -11,7 +11,9 @@
         `${commitMessage}`,
         `"task: #${commitTask}":http://tickets.id5.com.br:3001/issues/${commitTask}`,
         `"commit: ${commitLink.textContent.trim()}":${location.href}`,
-        `"branch: ${commitBranch.textContent.trim()}":${commitBranch.href}`
+        `"branch: ${commitBranch.textContent.trim()}":${commitBranch.href}`,
+        ``,
+        ``,
     ].join('\n');
 
     const dummyElement = document.createElement("textArea");
