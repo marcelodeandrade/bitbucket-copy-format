@@ -12,8 +12,6 @@
     $("#commit-summary #commit-files-summary .iterable-item").each(function () {
         $(this).each(function (index, value) {
 
-            console.log(value);
-
             commitFilesSumary += '"';
             commitFilesSumary += value.querySelector('div .lines-added').textContent.trim();
             commitFilesSumary += '  ';
