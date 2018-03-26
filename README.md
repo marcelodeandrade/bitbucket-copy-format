@@ -1,5 +1,3 @@
-# forked from [**marcelodeandrade/bitbucket-copy-format**](https://github.com/marcelodeandrade/bitbucket-copy-format) 
-
 # bitbucket-copy-format
 A commit formatter for redmine tasks 
 
