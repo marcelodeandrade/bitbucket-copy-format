@@ -18,6 +18,12 @@ You can load the extension directly from the zip file on web-ext-artifacts folde
 1. Click in extension button
 2. Paste
 
+## Settings 
+In extension settings we can enable/disable
+
+0. Autoclose tabs.
+1. Summary files log copy.
+
 ## License
 
 This project is licensed under the terms of the [**MIT**](https://opensource.org/licenses/MIT) license.
