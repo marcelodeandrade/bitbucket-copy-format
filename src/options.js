@@ -4,8 +4,9 @@
     "use strict";
     
     function loadOptions() {
+
         browser.storage.local.get({
-            autoclose: 'autoclose'
+            autoclose: 'autoclose',
         }, function(items) {
 
             const id = (items.autoclose) ? "on" : "off";
@@ -13,15 +14,32 @@
             radio.setAttribute("checked", "checked");
             parent = radio.parentNode;
             parent.classList.add('active');
+
         });
+
+        browser.storage.local.get({
+            filesummary: 'filesummary',
+        }, function (items) {
+
+            const id = (items.filesummary) ? "on_filesummary" : "off_filesummary";
+            const radio = document.getElementById(id);
+            radio.setAttribute("checked", "checked");
+            parent = radio.parentNode;
+            parent.classList.add('active');
+
+        });
+        
     }
     
     function saveOptions() {
         
         const autoclose = document.querySelector('[name="autoclose"').checked;
         
+        const filesummary = document.querySelector('[name="filesummary"').checked;
+
         browser.storage.local.set({
-            autoclose: autoclose
+            autoclose: autoclose,
+            filesummary: filesummary,
         }, 
         () => {
             const status = document.getElementById('status');

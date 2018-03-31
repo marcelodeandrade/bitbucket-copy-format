@@ -33,7 +33,7 @@
                     }
 
                 });
-                
+
                 setTimeout(() => { browser.notifications.clear(id); }, 1000);
             });
             
