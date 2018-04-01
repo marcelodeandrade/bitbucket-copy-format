@@ -3,7 +3,12 @@
 
     browser.storage.local.get({
         filesummary: 'filesummary',
+        urlredmine: 'urlredmine',
+
     }, function (items) {
+
+        const urlRedmine = items.urlredmine;
+        alert(urlRedmine);
 
         const commitQuery = document.querySelector(".commit-message").textContent.split(/(?=[\d]{5,7})/);
         const commitMessage = commitQuery[0].replace("#", "") || "";
@@ -43,7 +48,7 @@
 
         const toCopy = [
             `${commitMessage}`,
-            `"task: #${commitTask}":http://tickets.id5.com.br:3001/issues/${commitTask}`,
+            `"task: #${commitTask}":${urlRedmine}/issues/${commitTask}`,
             `"commit: ${commitLink.textContent.trim()}":${location.href}`,
             `"branch: ${commitBranch.textContent.trim()}":${commitBranch.href}`,
             ``,
