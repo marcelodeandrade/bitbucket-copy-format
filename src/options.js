@@ -28,6 +28,16 @@
             parent.classList.add('active');
 
         });
+
+        browser.storage.local.get({
+            urlredmine: 'urlredmine',
+        }, function (items) {
+
+            const id = "urlredmine";
+            const field = document.getElementById(id);
+            field.value = items.urlredmine;
+
+        });
         
     }
     
@@ -37,9 +47,12 @@
         
         const filesummary = document.querySelector('[name="filesummary"').checked;
 
+        const urlredmine = document.querySelector('[name="urlredmine"').value;
+
         browser.storage.local.set({
             autoclose: autoclose,
             filesummary: filesummary,
+            urlredmine: urlredmine,
         }, 
         () => {
             const status = document.getElementById('status');
