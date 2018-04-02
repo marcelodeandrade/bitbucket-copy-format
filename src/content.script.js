@@ -8,8 +8,7 @@
     }, function (items) {
 
         const urlRedmine = items.urlredmine;
-        alert(urlRedmine);
-
+       
         const commitQuery = document.querySelector(".commit-message").textContent.split(/(?=[\d]{5,7})/);
         const commitMessage = commitQuery[0].replace("#", "") || "";
         const commitTask = commitQuery[1] || "";
