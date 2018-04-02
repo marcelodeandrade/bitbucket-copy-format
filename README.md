@@ -23,6 +23,7 @@ In extension settings we can enable/disable
 
 0. Autoclose tabs.
 1. Summary files log copy.
+2. Input for url redmine.
 
 ## License
 
